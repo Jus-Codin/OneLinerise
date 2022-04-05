@@ -1,10 +1,10 @@
 from setuptools import setup, find_packages
-import OneLinerise
+from OneLinerise import __version__
 
 setup(
   name = 'OneLinerise',
 
-  version = OneLinerise.__version__,
+  version = __version__,
   packages = find_packages(), # What can I say I'm lazy
 
   author = "Jus-Codin",
