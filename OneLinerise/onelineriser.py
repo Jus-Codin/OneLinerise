@@ -64,7 +64,7 @@ class OneLinerise:
   
   @property
   def returned(self):
-    """Creates a proxy object which allows you to interact with the last object. To return to the main class run the `RET_IF`.
+    """Creates a proxy object which allows you to interact with the last object. To return to the main class run the `RET_OBJ`.
     Yes, it's a bad way to do it, but does it look like I care?"""
     if self.last is _MISSING:
       raise OneLineError("nothing to return!")
