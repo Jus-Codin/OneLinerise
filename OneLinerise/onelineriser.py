@@ -29,7 +29,7 @@ class ProxyObject:
     self.owner.last = self.value
     return self.owner
     
-class OneLineriser:
+class OneLinerise:
   """Where the magic happens"""
   last = _MISSING
 
