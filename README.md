@@ -2,7 +2,7 @@
 One-line your code easily but still with the fun of doing so!
 
 Have YOU ever wanted to write one-line Python code, but don't have the sanity to do it?
-Do YOU want to write one-line code YOURSELF and not be a script kiddie and do ctrl-c ctrl-v?
+Do YOU want to write one-line code YOURSELF and not be a script kiddie or do ctrl-c ctrl-v?
 
 Well not to worry, because I am here to remove your braincells for you!
 Introducing... 🥁
