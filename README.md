@@ -17,8 +17,8 @@ google or smth I too lazy to write rn
 
 ### Usage
 ```py
-from OneLineriser import OneLineriser
-OneLineriser().print("test").literal(10).returned.bit_length().RET_OBJ.save_last_as("bruh").print_last.print(bruh)
+from OneLineriser import OneLinerise
+OneLinerise().print("test").literal(10).returned.bit_length().RET_OBJ.save_last_as("bruh").print_last.print(bruh)
 
 # Output
 >>> test
