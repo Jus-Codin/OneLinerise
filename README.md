@@ -21,7 +21,7 @@ pip install git+https://github.com/Jus-Codin/One-liner-iser
 ### Usage
 ```py
 from OneLineriser import OneLinerise
-OneLinerise().print("test").literal(10).returned.bit_length().RET_OBJ.save_last_as("bruh").print_last.print(bruh)
+OneLinerise(globals()).print("test").literal(10).returned.bit_length().RET_OBJ.save_last_as("bruh").print_last.print(bruh)
 
 # Output
 >>> test
