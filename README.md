@@ -13,7 +13,12 @@ The **One-Liner-iser**
 ## How to use
 
 ### Installation
-google or smth I too lazy to write rn
+You can install this as a package by running
+```
+pip install git+https://github.com/Jus-Codin/One-liner-iser
+```
+
+PS do note that variable assigning might be broken at the moment
 
 ### Usage
 ```py
