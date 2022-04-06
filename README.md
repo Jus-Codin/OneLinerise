@@ -18,8 +18,6 @@ You can install this as a package by running
 pip install git+https://github.com/Jus-Codin/One-liner-iser
 ```
 
-PS do note that variable assigning might be broken at the moment
-
 ### Usage
 ```py
 from OneLineriser import OneLinerise
