@@ -33,11 +33,14 @@ class OneLinerise:
   """Where the magic happens"""
   last = _MISSING
 
+  def __init__(self, globals=globals()):
+    self._globals = globals
+
   def __getattr__(self, attr):
     try:
       self.last = getattr(builtins, attr)
     except AttributeError:
-      self.last = globals()[attr]
+      self.last = self._globals[attr]
     return self
 
   def __getitem__(self, keys):
@@ -53,7 +56,7 @@ class OneLinerise:
   @property
   def save_last(self):
     """Saves the value of the last thing returned in '_'"""
-    globals()["_"] = self.last
+    self._globals["_"] = self.last
     return self
 
   @property
@@ -72,7 +75,7 @@ class OneLinerise:
 
   def save_last_as(self, name):
     """Saves the value of the last thing returned with the name supplied"""
-    globals()[name] = self.last
+    self._globals[name] = self.last
     return self
   
   def literal(self, literal):
@@ -82,4 +85,4 @@ class OneLinerise:
 
   def set_var(self, var, name=None):
     """Sets a value of a variable. If no name is given, then '__' will be used"""
-    globals()[name if name is None else "__"] = var
+    self._globals[name if name is None else "__"] = var
