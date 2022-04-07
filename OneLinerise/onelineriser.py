@@ -77,7 +77,16 @@ class _ProxyObject:
 
 
 class OneLinerise:
-  """Where the magic happens"""
+  """
+  Where the magic happens
+  
+  Parameters
+  ----------
+  globals : `dict`
+    The dictionary in which the variables will be stored.
+    Pass in `globals()` in order for it to store the variables
+    directly in your python file to be run
+  """
 
   last = _MISSING
 
