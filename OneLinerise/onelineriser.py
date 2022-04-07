@@ -4,6 +4,8 @@ class OneLineError(Exception): ...
 
 class _MISSING: ...
 
+
+
 class ProxyObject:
   """Hah try saying that ten times real quick"""
   
@@ -28,7 +30,18 @@ class ProxyObject:
     """Stop getting items from current object, return to monke"""
     self.owner.last = self.value
     return self.owner
-    
+
+
+
+def chainablemethod(func):
+  """Convienience decoratror which makes a method return its class"""
+  def wrapper(self, *args, **kwargs):
+    func(self, *args, **kwargs)
+    return self
+  return wrapper
+
+
+
 class OneLinerise:
   """Where the magic happens"""
   last = _MISSING
@@ -54,16 +67,16 @@ class OneLinerise:
     return self
 
   @property
+  @chainablemethod
   def save_last(self):
     """Saves the value of the last thing returned in '_'"""
     self._globals["_"] = self.last
-    return self
 
   @property
+  @chainablemethod
   def print_last(self):
     """Prints the last object returned"""
     print(self.last)
-    return self
   
   @property
   def returned(self):
@@ -73,16 +86,17 @@ class OneLinerise:
       raise OneLineError("nothing to return!")
     return ProxyObject(self, self.last)
 
+  @chainablemethod
   def save_last_as(self, name):
     """Saves the value of the last thing returned with the name supplied"""
     self._globals[name] = self.last
-    return self
-  
+
+  @chainablemethod 
   def literal(self, literal):
     """Empty function for you to pass literals like `1` or `None` into"""
     self.last = literal
-    return self
 
+  @chainablemethod
   def set_var(self, var, name=None):
     """Sets a value of a variable. If no name is given, then '__' will be used"""
     self._globals[name if name is None else "__"] = var
