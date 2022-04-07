@@ -65,7 +65,6 @@ class _ProxyObject:
   @AttributedCallable
   def RET_OBJ(self):
     """Stop getting items from current object, return to monke"""
-
     self.owner.last = self.value
     return self.owner
 
