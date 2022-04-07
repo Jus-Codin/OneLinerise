@@ -1,6 +1,7 @@
-import builtins
 
 from __future__ import annotations
+
+import builtins
 
 from typing import Any, Callable
 
