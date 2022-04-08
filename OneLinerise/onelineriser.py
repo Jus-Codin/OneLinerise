@@ -43,7 +43,7 @@ class _ProxyObject:
 
   Parameters
   ----------
-  owner : :class:`OneLinerise`
+  owner : `OneLinerise`
   value : `Any`
 
   Attributed Callables
@@ -93,33 +93,49 @@ class OneLinerise:
   def __init__(self, globals=globals()):
     self._globals = globals
 
+  @chainablemethod
   def __getattr__(self, attr) -> OneLinerise:
     try:
       self.last = getattr(builtins, attr)
     except AttributeError:
       self.last = self._globals[attr]
-    return self
 
+  @chainablemethod
   def __getitem__(self, keys) -> OneLinerise:
     self.last = self.last.__getitem__(keys)
-    return self
 
+  @chainablemethod
   def __call__(self, *args, **kwargs) -> OneLinerise:
     if self.last is _MISSING:
       raise OneLineError("there is nothing to call!")
     self.last = self.last(*args, **kwargs)
-    return self
 
   @AttributedCallable
   @chainablemethod
   def save_last(self) -> OneLinerise:
-    """Saves the value of the last thing returned in '_'"""
+    """Saves the value of the last thing returned in '_'
+    
+    Raises
+    ------
+    OneLineError
+      If there is no objects created yet
+    """
+    if self.last is _MISSING:
+      raise OneLineError("nothing to save!")
     self._globals["_"] = self.last
 
   @AttributedCallable
   @chainablemethod
   def print_last(self) -> OneLinerise:
-    """Prints the last object returned"""
+    """Prints the last object returned
+    
+    Raises
+    ------
+    OneLineError
+      If there is no objects created yet
+    """
+    if self.last is _MISSING:
+      raise OneLineError("no objects to print!")
     print(self.last)
   
   @AttributedCallable
@@ -131,7 +147,7 @@ class OneLinerise:
     Raises
     ------
     OneLineError
-      If there is no objects in the line yet
+      If there is no objects created yet
     """
     if self.last is _MISSING:
       raise OneLineError("nothing to return!")
@@ -145,7 +161,14 @@ class OneLinerise:
     ----------
     name : `str`
       Name to save the value as
+
+    Raises
+    ------
+    OneLineError
+      If there is no objects created yet
     """
+    if self.last is _MISSING:
+      raise OneLineError("nothing to save!")
     self._globals[name] = self.last
 
   @chainablemethod 
