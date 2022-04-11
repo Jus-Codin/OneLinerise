@@ -56,20 +56,20 @@ class _ProxyObject:
     self.owner = owner
     self.value = value
 
+  @chainablemethod
   def __getattr__(self, attr) -> _ProxyObject:
     self.value = getattr(self.value, attr)
-    return self
 
+  @chainablemethod
   def __getitem__(self, *keys) -> _ProxyObject:
     self.value = self.value.__getitem__(*keys)
-    return self
 
+  @chainablemethod
   def __call__(self, *args, **kwargs) -> _ProxyObject:
     self.value = self.value(*args, **kwargs)
-    return self
   
   @AttributedCallable
-  def RET_OBJ(self) -> OneLinerise:
+  def END(self) -> OneLinerise:
     """Stop getting items from current object, return to monke"""
     self.owner.last = self.value
     return self.owner
@@ -141,7 +141,7 @@ class OneLinerise:
   @AttributedCallable
   def returned(self) -> _ProxyObject:
     """
-    Creates a proxy object which allows you to interact with the last object. To return to the main class run the `RET_OBJ`.
+    Creates a proxy object which allows you to interact with the last object. To return to the main class run `END`.
     Yes, it's a bad way to do it, but does it look like I care?
 
     Raises
