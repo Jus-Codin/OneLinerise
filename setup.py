@@ -1,5 +1,5 @@
 from setuptools import setup, find_packages
-from OneLinerise import __version__
+from .OneLinerise import __version__
 
 setup(
   name = 'onelinerise',
