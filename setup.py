@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 from OneLinerise import __version__
 
 setup(
-  name = 'OneLinerise',
+  name = 'onelinerise',
 
   version = __version__,
   packages = find_packages(), # What can I say I'm lazy
