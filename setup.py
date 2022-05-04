@@ -1,10 +1,9 @@
 from setuptools import setup, find_packages
-from .OneLinerise import __version__
 
 setup(
   name = 'onelinerise',
 
-  version = __version__,
+  version = "1.0.0",
   packages = find_packages(), # What can I say I'm lazy
 
   author = "Jus-Codin",
@@ -15,11 +14,11 @@ setup(
   long_description = open('README.md').read(),
   long_description_content_type="text/markdown",
 
-  url = "https://github.com/Jus-Codin/One-liner-iser",
+  url = "https://github.com/Jus-Codin/OneLinerise",
 
   classifiers = [
     "Programming Language :: Python",
-    "Development Status :: 5 - Production/Stable"
+    "Development Status :: 5 - Production/Stable",
     "Natural Language :: English",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3.8",

@@ -1,13 +1,13 @@
-# One-liner-iser
+# OneLineriser
 One-line your code easily but still with the fun of doing so!
 
 Have YOU ever wanted to write one-line Python code, but don't have the sanity to do it?
 Do YOU want to write one-line code YOURSELF and not be a script kiddie or do ctrl-c ctrl-v?
 
 Well not to worry, because I am here to remove your braincells for you!
-Introducing... 🥁
+Introducing... :tada:
 
-The **One-Liner-iser**
+The **OneLineriser**
 <sub><sup>heh say that ten times real quick</sup></sub>
 
 ## How to use
@@ -15,12 +15,16 @@ The **One-Liner-iser**
 ### Installation
 You can install this as a package by running
 ```
-pip install git+https://github.com/Jus-Codin/One-liner-iser
+pip install onelinerise
+```
+Alternatively, install the master branch at
+```
+pip install git+https://github.com/Jus-Codin/OneLinerise
 ```
 
 ### Usage
 ```py
-from OneLineriser import OneLinerise
+from onelinerise import OneLinerise
 OneLinerise(globals()).print("test").literal(10).returned.bit_length().RET_OBJ.save_last_as("bruh").print_last.print(bruh)
 
 # Output
@@ -46,4 +50,4 @@ I will try to come back to this, in fact I have a few ideas in mind:
  - [ ] Customisable settings? Maybe?
  - [ ] And maybe even more
 
-If you do have suggestions or want to contribute, do feel free to open an issue or pull request. As this repo is informal, I'm not putting guidelines and stuff for this project, all just default barebones settings (but I can still ban you)
+If you do have suggestions or want to contribute, do feel free to open an issue or pull request. As this repo is informal, I'm not putting guidelines and stuff for this project, all just default barebones settings
